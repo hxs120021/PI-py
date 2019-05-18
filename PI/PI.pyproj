@@ -74,11 +74,9 @@
     <Folder Include="Task\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Sensor\max30102\.gitignore" />
     <Content Include="Sensor\max30102\ir.log" />
     <Content Include="Sensor\max30102\README.md" />
     <Content Include="Sensor\max30102\red.log" />
-    <Content Include="Sensor\MLX90614\.gitignore" />
     <Content Include="Sensor\MLX90614\LICENSE" />
     <Content Include="Sensor\MLX90614\README.md" />
   </ItemGroup>
