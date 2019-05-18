@@ -1,0 +1,45 @@
+from tkinter import *
+
+root = Tk()
+root.title("aaa")
+root.geometry("800x500")
+bid_lb = Label(root, text='bid', font=("ubuntu mono", 15), width = 5)
+bid_lb.grid(column=0, row=0)
+sid_lb = Label(root, text='sid', font=("ubuntu mono", 15), width = 5)
+sid_lb.grid(column=1, row=0)
+name_lb = Label(root, text='name', font=("ubuntu mono", 15), width = 5)
+name_lb.grid(column=2, row=0)
+sex_lb = Label(root, text='sex', font=("ubuntu mono", 15), width = 5)
+sex_lb.grid(column=3, row=0)
+age_lb = Label(root, text='age', font=("ubuntu mono", 15), width = 7)
+age_lb.grid(column=4, row= 0)
+
+start_but = Button(root, text="start", width = 4)
+start_but.grid(column=5, row = 0)
+end_but = Button(root, text="end", width = 4)
+end_but.grid(column=5, row=1)
+alarm_but = Button(root, text="alarm", width = 4)
+alarm_but.grid(column=5, row = 2)
+re_but = Button(root, text="refer", width = 4)
+re_but.grid(column=5, row = 3)
+
+#start_but.bind('<ButtonPress-1>', show)
+
+hr_can = Canvas(root, width = 500, height = 400)
+hr_can.grid(column = 0, columnspan = 4,row=1, rowspan = 4)
+spo2_can = Canvas(root,width = 500, height = 100)
+spo2_can.grid(column = 0, columnspan = 4, row = 2, rowspan=2)
+temp_can = Canvas(root,width = 500, height = 100)
+temp_can.grid(column = 0, columnspan = 4, row = 3, rowspan = 2)
+
+#hr_can.create_line(0,0,500,20)
+#hr_can.create_line(100,20,500,20)
+
+hr_lb = Label(root, text='hr:34', font=("ubuntu mono", 15), width = 7)
+hr_lb.grid(column=4, row=1)
+spo2_lb = Label(root, text='spo2:23', font=("ubuntu mono", 15), width = 7)
+spo2_lb.grid(column=4, row=2)
+temp_lb = Label(root, text='temp:12', font=("ubuntu mono", 15), width = 7)
+temp_lb.grid(column=4, row = 3)
+
+#root.mainloop()
