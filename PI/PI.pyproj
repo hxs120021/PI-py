@@ -59,6 +59,9 @@
     <Compile Include="Sensor\Sensor.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Sensor\SensorTask.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Sensor\__init__.py">
       <SubType>Code</SubType>
     </Compile>

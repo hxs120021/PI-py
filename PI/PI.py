@@ -41,7 +41,7 @@ def start_button(even):
 
 	#no
 	sensor = Sensor(sendQueue, hostQueue)
-	sensor.getData()
+	sensor.getDataTask()
 	#ok
 	sendcheck = SendCheck(sendQueue, sendIP)
 	sendcheck.whilesend()

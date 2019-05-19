@@ -22,6 +22,10 @@ class Sensor(object):
 		
 		return result[0], result[2]
 
+	def getDataTask(self):
+		task = BaseThread(self.getData)
+		task.start()
+
 	def getData(self):
 		while(True):
 			hr, spo2 = self.getMax30102Data()
