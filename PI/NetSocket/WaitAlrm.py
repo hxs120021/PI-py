@@ -2,7 +2,8 @@ from Task.BaseThread import BaseThread
 import socket
 
 class WaitAlrm(object):
-	def __init__(self):
+	def __init__(self, ip):
+		self.ip = ip
 		pass
 
 	def wait(self):
@@ -12,7 +13,7 @@ class WaitAlrm(object):
 	def func(self):
 		print("wait alrm")
 		server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-		server.bind(('0.0.0.0', 9970))
+		server.bind((self.ip, 9970))
 		server.listen(10)
 		while(True):
 			conn, addr = server.accept()

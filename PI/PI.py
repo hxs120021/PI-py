@@ -33,19 +33,19 @@ hostQueue = Queue()
 
 
 equ = "ICU001^equ001^testname^man^40"
-sendIP = "192.168.1.102"
+sendIP = "10.63.2.115"
+bindip = "10.63.10.72"
 
 def start_button(even):
 	#ok
-	sendequ = SendMsg(sendIP, 6698, equ)
-	sendequ.send()
+
 	#no
 	sensor = Sensor(sendQueue, hostQueue)
 	sensor.getData()
 	#ok
 	sendcheck = SendCheck(sendQueue, sendIP)
 	sendcheck.whilesend()
-	waitalrm = WaitAlrm()
+	waitalrm = WaitAlrm(bindip)
 	waitalrm.wait()
 	draw = Draw([hr_can, spo2_can, temp_can], [bid_lb, sid_lb, name_lb, sex_lb, age_lb], hostQueue)
 	draw.draw()
@@ -68,5 +68,6 @@ def alrm_button(even):
 
 alarm_but.bind('<ButtonPress-1>', alrm_button)
 
-
+sendequ = SendMsg(sendIP, 6698, equ)
+sendequ.send()
 root.mainloop()

@@ -2,7 +2,7 @@ import time
 from Task.BaseThread import BaseThread
 from max30102.max30102 import MAX30102 as max30102
 from MLX90614.mlx90614 import MLX90614 as mlx90614
-
+from hrcalc import *
 class Sensor(object):
 
 	def __init__(self, sendQueue, hostQueue):
@@ -13,11 +13,12 @@ class Sensor(object):
 		self.m = max30102()
 
 	def getGY906Data(self):
-		return self.thermometer.get_obj_temo()
+		return self.thermometer.get_obj_temp()
 
 	def getMax30102Data(self):
 		red, ir = self.m.read_sequential()
-		result = hrcalc.calc_hr_and_spo2(ir[:100], red[:100])
+		result = calc_hr_and_spo2(ir[:100], red[:100])
+		
 		return result[0], result[2]
 
 	def getData(self):
@@ -25,5 +26,6 @@ class Sensor(object):
 			hr, spo2 = self.getMax30102Data()
 			temp = self.getGY906Data()
 			msg = str(hr) + '^' + str(spo2) + '^' + str(temp)
+			print(msg)
 			self.sendQueue.put(msg)
 			self.hostQueue.put(msg)
