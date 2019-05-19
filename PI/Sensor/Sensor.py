@@ -10,7 +10,7 @@ class Sensor(object):
 		self.hostQueue = hostQueue
 		self.thermometer_address = 0x5a
 		self.thermometer = mlx90614(self.thermometer_address)
-		self.m = max30102.MAX30102()
+		self.m = max30102()
 
 	def getGY906Data(self):
 		return self.thermometer.get_obj_temo()
