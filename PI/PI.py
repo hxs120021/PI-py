@@ -40,8 +40,8 @@ def start_button(even):
 	sendequ = SendMsg(sendIP, 6698, equ)
 	sendequ.send()
 	#no
-	#sensor = Sensor(sendQueue, hostQueue)
-	#sensor.getData()
+	sensor = Sensor(sendQueue, hostQueue)
+	sensor.getData()
 	#ok
 	sendcheck = SendCheck(sendQueue, sendIP)
 	sendcheck.whilesend()
