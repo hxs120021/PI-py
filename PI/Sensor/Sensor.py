@@ -1,9 +1,7 @@
-from max30102 import MAX30102 as max30102
-from mlx90614 import MLX90614 as mlx90614
-import hrcalc
 import time
-#from MLX90614.mlx90614 import MLX90614 as mlx90614
 from Task.BaseThread import BaseThread
+from max30102.max30102 import MAX30102 as max30102
+from MLX90614.mlx90614 import MLX90614 as mlx90614
 
 class Sensor(object):
 

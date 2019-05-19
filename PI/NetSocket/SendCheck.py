@@ -5,9 +5,9 @@ from queue import Queue
 #发送检测的数据
 class SendCheck(object):
 
-	def __init__(self,queue):
+	def __init__(self,queue, ip):
 		self.queue = queue
-		#self.ip = ip
+		self.ip = ip
 
 	def whilesend(self):
 		sendThread = BaseThread(self.func)
@@ -15,7 +15,7 @@ class SendCheck(object):
 
 	def func(self):
 		client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-		client.connect(("127.0.0.1", 9966))
+		client.connect((self.ip, 9966))
 		while(True):
 			try:
 				checkdata = self.queue.get()

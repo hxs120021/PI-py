@@ -12,7 +12,7 @@ class WaitAlrm(object):
 	def func(self):
 		print("wait alrm")
 		server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-		server.bind(('127.0.0.1', 9970))
+		server.bind(('0.0.0.0', 9970))
 		server.listen(10)
 		while(True):
 			conn, addr = server.accept()

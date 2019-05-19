@@ -3,7 +3,7 @@ from MainUI.Draw import Draw
 from NetSocket.SendMsg import SendMsg
 from NetSocket.SendCheck import SendCheck
 from NetSocket.WaitAlrm import WaitAlrm
-#from Sensor import Sensor
+from Sensor.Sensor import Sensor
 from queue import Queue
 sendQueue = Queue()
 hostQueue = Queue()
@@ -33,16 +33,17 @@ hostQueue = Queue()
 
 
 equ = "ICU001^equ001^testname^man^40"
+sendIP = "192.168.1.102"
 
 def start_button(even):
 	#ok
-	sendequ = SendMsg("127.0.0.1", 6698, equ)
+	sendequ = SendMsg(sendIP, 6698, equ)
 	sendequ.send()
 	#no
 	#sensor = Sensor(sendQueue, hostQueue)
 	#sensor.getData()
 	#ok
-	sendcheck = SendCheck(sendQueue)
+	sendcheck = SendCheck(sendQueue, sendIP)
 	sendcheck.whilesend()
 	waitalrm = WaitAlrm()
 	waitalrm.wait()

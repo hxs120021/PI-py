@@ -5,8 +5,7 @@
     <ProjectGuid>1a8ea640-07e0-408e-9f3d-6db1b9c783dc</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <StartupFile>PI.py</StartupFile>
-    <SearchPath>
-    </SearchPath>
+    <SearchPath>max30102;MLX90614</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>PI</Name>
@@ -36,6 +35,14 @@
     <Compile Include="MainUI\__init__.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="max30102\hrcalc.py" />
+    <Compile Include="max30102\hrdump.py" />
+    <Compile Include="max30102\makegraph.py" />
+    <Compile Include="max30102\max30102.py" />
+    <Compile Include="max30102\__init__.py" />
+    <Compile Include="MLX90614\example.py" />
+    <Compile Include="MLX90614\mlx90614.py" />
+    <Compile Include="MLX90614\__init__.py" />
     <Compile Include="NetSocket\SendMsg.py">
       <SubType>Code</SubType>
     </Compile>
@@ -49,13 +56,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="PI.py" />
-    <Compile Include="Sensor\max30102\hrcalc.py" />
-    <Compile Include="Sensor\max30102\hrdump.py" />
-    <Compile Include="Sensor\max30102\makegraph.py" />
-    <Compile Include="Sensor\max30102\max30102.py" />
-    <Compile Include="Sensor\MLX90614\example.py" />
-    <Compile Include="Sensor\MLX90614\mlx90614.py" />
     <Compile Include="Sensor\Sensor.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sensor\__init__.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Task\BaseThread.py">
@@ -67,18 +71,18 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MainUI\" />
+    <Folder Include="max30102\" />
+    <Folder Include="MLX90614\" />
     <Folder Include="NetSocket\" />
     <Folder Include="Sensor\" />
-    <Folder Include="Sensor\max30102\" />
-    <Folder Include="Sensor\MLX90614\" />
     <Folder Include="Task\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Sensor\max30102\ir.log" />
-    <Content Include="Sensor\max30102\README.md" />
-    <Content Include="Sensor\max30102\red.log" />
-    <Content Include="Sensor\MLX90614\LICENSE" />
-    <Content Include="Sensor\MLX90614\README.md" />
+    <Content Include="max30102\ir.log" />
+    <Content Include="max30102\README.md" />
+    <Content Include="max30102\red.log" />
+    <Content Include="MLX90614\LICENSE" />
+    <Content Include="MLX90614\README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
