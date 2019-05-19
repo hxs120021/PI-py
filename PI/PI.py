@@ -32,9 +32,14 @@ hostQueue = Queue()
 #hostQueue.put("90^99^36")
 
 
-equ = "ICU001^equ001^testname^man^40"
+equ = "ICU996^equ996^testname^man^40"
 sendIP = "10.63.2.115"
 bindip = "10.63.10.72"
+bid_lb["text"] = "ICU996"
+sid_lb["text"] = "equ996"
+name_lb["text"] = "testname"
+sex_lb["text"] = "man"
+age_lb["text"] = "40"
 
 def start_button(even):
 	#ok
@@ -47,7 +52,7 @@ def start_button(even):
 	sendcheck.whilesend()
 	waitalrm = WaitAlrm(bindip)
 	waitalrm.wait()
-	draw = Draw([hr_can, spo2_can, temp_can], [bid_lb, sid_lb, name_lb, sex_lb, age_lb], hostQueue)
+	draw = Draw([hr_can, spo2_can, temp_can], [hr_lb, spo2_lb, temp_lb], hostQueue)
 	draw.draw()
 	pass
 
