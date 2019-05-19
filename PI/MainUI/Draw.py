@@ -25,9 +25,9 @@ class Draw(object):
 			spo2 = float(strsp[1])
 			temp = float(strsp[2])
 
-			self.lables[0]["text"] = str(hr)
-			self.lables[1]["text"] = str(spo2)
-			self.lables[2]["text"] = str(temp)
+			self.lables[0]["text"] = str(round(hr, 3))
+			self.lables[1]["text"] = str(round(spo2, 3))
+			self.lables[2]["text"] = str(round(temp, 3))
 
 			newHrPort = Port(i*10+5, self.GetHrPx(hr))
 			newSpo2Port = Port(i*10+5, self.GetSpo2Px(spo2))
