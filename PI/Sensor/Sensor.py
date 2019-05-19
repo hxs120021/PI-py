@@ -1,8 +1,9 @@
 import time
 from Task.BaseThread import BaseThread
 from max30102.max30102 import MAX30102 as max30102
+from max30102.hrcalc import *
 from MLX90614.mlx90614 import MLX90614 as mlx90614
-from hrcalc import *
+
 class Sensor(object):
 
 	def __init__(self, sendQueue, hostQueue):
