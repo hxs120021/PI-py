@@ -32,13 +32,13 @@ hostQueue = Queue()
 #hostQueue.put("90^99^36")
 
 
-equ = "ICU996^equ996^qkl^wm^40"
+equ = "ICU996^equ996^张三^男^40"
 sendIP = "10.63.2.115"
 bindip = "10.63.10.72"
 bid_lb["text"] = "ICU996"
 sid_lb["text"] = "equ996"
-name_lb["text"] = "qkl"
-sex_lb["text"] = "wm"
+name_lb["text"] = "张三"
+sex_lb["text"] = "男"
 age_lb["text"] = "40"
 
 def start_button(even):
