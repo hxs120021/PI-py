@@ -33,8 +33,8 @@ hostQueue = Queue()
 
 
 equ = "ICU996^equ996^张三^男^40"
-sendIP = "10.63.2.115"
-bindip = "10.63.10.72"
+sendIP = "192.168.43.175"
+bindip = "192.168.43.246"
 bid_lb["text"] = "ICU996"
 sid_lb["text"] = "equ996"
 name_lb["text"] = "张三"
